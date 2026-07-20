@@ -1,12 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lutera Toast Company | Stealing Hearts with Every Crunch</title>
+    
+    <!-- Google Fonts for Bold Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="progressBar"></div>
+
+    <!-- Animated Ambient Background Glows & Particles -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">LUTERA<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shapes">Shapes & Colors</a></li>
+            <li><a href="#builder">Custom Builder</a></li>
+            <li><a href="#builder" class="btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge anim-reveal">Reinventing The Toast</span>
+            <h1 class="anim-reveal">CRAZY SHAPES.<br><span class="highlight-text">WILD COLORS.</span></h1>
+            <p class="anim-reveal">We are <strong>Lutera Toast Company</strong>. Stealing the boredom out of your breakfast with colorful, uniquely shaped crunchy delights.</p>
+            <div class="hero-btns anim-reveal">
+                <a href="#shapes" class="btn-primary magnetic-btn">Explore Shapes</a>
+                <a href="#builder" class="btn-secondary magnetic-btn">Build Yours</a>
+            </div>
+        </div>
+
+        <!-- Glassmorphism Card Preview with Toast Image -->
+        <div class="hero-card-container anim-reveal">
+            <div class="glass-card tilt-card">
+                <img src="https://images.unsplash.com/photo-1584776296944-ab6fb57b0bff?w=500&auto=format&fit=crop&q=80" alt="Star Toast" class="toast-img-visual glow-pink">
+                <h3>Star-Shaped Velvet Toast</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Crimson Red • Dragonfruit Extract</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shapes & Colors Gallery Section -->
+    <section class="gallery-section" id="shapes">
+        <div class="section-header">
+            <span class="badge">The Toast Vault</span>
+            <h2 class="scroll-anim">EXPLORE OUR <span class="highlight-text">CRAZY COLLECTION</span></h2>
+            <p class="scroll-anim">Pick your favorite shape, color, and flavor. Crafted to perfection with bold ingredients.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-tabs scroll-anim">
+            <button class="tab-btn active" data-filter="all">All Shapes</button>
+            <button class="tab-btn" data-filter="star">Stars ✦</button>
+            <button class="tab-btn" data-filter="heart">Hearts ♥</button>
+            <button class="tab-btn" data-filter="diamond">Diamonds ◆</button>
+            <button class="tab-btn" data-filter="hexagon">Hexagons ⬡</button>
+        </div>
+
+        <!-- Toast Cards Grid -->
+        <div class="toast-grid">
+
+            <!-- Card 1 -->
+            <div class="toast-card tilt-card scroll-card" data-category="star">
+                <img src="https://images.unsplash.com/photo-1584776296944-ab6fb57b0bff?w=500&auto=format&fit=crop&q=80" alt="Velvet Star" class="toast-img-visual glow-pink">
+                <div class="card-info">
+                    <h3>Velvet Star</h3>
+                    <span class="color-tag pink">Neon Pink</span>
+                    <p>Infused with Dragonfruit & Berry Extract for a crunchy, fruity twist.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="toast-card tilt-card scroll-card" data-category="heart">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=80" alt="Crimson Heart" class="toast-img-visual glow-red">
+                <div class="card-info">
+                    <h3>Crimson Heart</h3>
+                    <span class="color-tag red">Ruby Red</span>
+                    <p>Rich Beetroot dough with a subtle touch of Chili & Cinnamon.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="toast-card tilt-card scroll-card" data-category="diamond">
+                <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=80" alt="Cyber Diamond" class="toast-img-visual glow-cyan">
+                <div class="card-info">
+                    <h3>Cyber Diamond</h3>
+                    <span class="color-tag cyan">Electric Blue</span>
+                    <p>Blue Spirulina-infused superfood toast with garlic butter crunch.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="toast-card tilt-card scroll-card" data-category="hexagon">
+                <img src="https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=500&auto=format&fit=crop&q=80" alt="Matcha Hex" class="toast-img-visual glow-green">
+                <div class="card-info">
+                    <h3>Matcha Hex</h3>
+                    <span class="color-tag green">Matcha Green</span>
+                    <p>Organic Green Tea & Sesame toast cut into a crisp honeycomb shape.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="toast-card tilt-card scroll-card" data-category="star">
+                <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=80" alt="Midnight Star" class="toast-img-visual glow-purple">
+                <div class="card-info">
+                    <h3>Midnight Star</h3>
+                    <span class="color-tag purple">Charcoal Black</span>
+                    <p>Activated Charcoal with Black Pepper and Oregano seasoning.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="toast-card tilt-card scroll-card" data-category="diamond">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=80" alt="Golden Rhombus" class="toast-img-visual glow-yellow">
+                <div class="card-info">
+                    <h3>Golden Rhombus</h3>
+                    <span class="color-tag yellow">Solar Gold</span>
+                    <p>Classic Golden Wheat roasted with Saffron Butter glaze.</p>
+                    <a href="#builder" class="btn-card">Taste It</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Custom Toast Builder Section -->
+    <section class="builder-section" id="builder">
+        <div class="section-header">
+            <span class="badge">Interactive Lab</span>
+            <h2 class="scroll-anim">BUILD YOUR <span class="highlight-text">LUTERA TOAST</span></h2>
+            <p class="scroll-anim">Mix & match shapes, vibrant colors, and toppings to create your unique crunchy masterpiece.</p>
+        </div>
+
+        <div class="builder-container scroll-anim">
+            <!-- Live Preview Panel -->
+            <div class="builder-preview">
+                <div class="preview-card tilt-card">
+                    <img id="toast-preview-img" src="https://images.unsplash.com/photo-1584776296944-ab6fb57b0bff?w=500&auto=format&fit=crop&q=80" alt="Custom Toast" class="toast-img-visual glow-pink">
+                    <h3 id="preview-title">Star-Shaped Toast</h3>
+                    <p id="preview-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">Neon Pink • Dragonfruit & Berry</p>
+                    <div class="price-tag" id="preview-price">₹199</div>
+                </div>
+            </div>
+
+            <!-- Options Controller Panel -->
+            <div class="builder-controls">
+                <div class="control-group">
+                    <label>1. Select Shape</label>
+                    <div class="option-buttons" id="shape-options">
+                        <button class="opt-btn active" data-shape="star-shape" data-shape-name="Star">Star ✦</button>
+                        <button class="opt-btn" data-shape="heart-shape" data-shape-name="Heart">Heart ♥</button>
+                        <button class="opt-btn" data-shape="diamond-shape" data-shape-name="Diamond">Diamond ◆</button>
+                        <button class="opt-btn" data-shape="hexagon-shape" data-shape-name="Hexagon">Hexagon ⬡</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>2. Select Color & Flavor</label>
+                    <div class="option-buttons" id="color-options">
+                        <button class="opt-btn active" data-color="glow-pink" data-color-name="Neon Pink" data-flavor="Dragonfruit & Berry">Pink</button>
+                        <button class="opt-btn" data-color="glow-cyan" data-color-name="Electric Blue" data-flavor="Blue Spirulina & Butter">Blue</button>
+                        <button class="opt-btn" data-color="glow-green" data-color-name="Matcha Green" data-flavor="Organic Matcha & Sesame">Green</button>
+                        <button class="opt-btn" data-color="glow-purple" data-color-name="Charcoal Black" data-flavor="Activated Charcoal & Pepper">Black</button>
+                    </div>
+                </div>
+
+                <button class="btn-primary build-order-btn magnetic-btn" id="order-toast-btn">Order This Creation 🚀</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 40px 8%; text-align: center; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 0.9rem;">
+        <p>&copy; 2026 Lutera Toast Company. Stealing boredom, one crunch at a time.</p>
+    </footer>
+
+    <!-- GSAP Animations & VanillaTilt Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
