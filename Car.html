@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>मेरी 3D कार वेबसाइट</title>
+  <style>
+    body { margin: 0; background-color: #1a1a1a; overflow: hidden; }
+    canvas { width: 100vw; height: 100vh; display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Three.js और GLTFLoader लाइब्रेरी CDN से -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // 1. Scene, Camera, और Renderer बनाएं
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 2, 5); // कैमरा थोड़ा ऊपर और पीछे रखें
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // 2. लाइट (Lighting) जोड़ें
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(5, 10, 7.5);
+    scene.add(directionalLight);
+
+    // 3. माउस से 3D मॉडल को 360-डिग्री घुमाने के लिए Controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    // 4. 3D कार मॉडल लोड करें
+    let carModel;
+    const loader = new THREE.GLTFLoader();
+    
+    // 👇 यहाँ अपनी कार की फाइल का सही पाथ (Path) डालें
+    loader.load('models/car.glb', function (gltf) {
+      carModel = gltf.scene;
+      scene.add(carModel);
+      console.log('कार मॉडल सफलता से लोड हो गया!');
+    }, undefined, function (error) {
+      console.error('मॉडल लोड करने में त्रुटि:', error);
+    });
+
+    // 5. एनिमेट और रेंडर करें
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // कार को धीरे-धीरे ऑटो-रोटेट करने के लिए (Optional)
+      if (carModel) {
+        carModel.rotation.y += 0.005;
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // स्क्रीन रिसाइज करने पर एडजस्ट करें
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
